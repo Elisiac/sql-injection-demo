@@ -4,7 +4,7 @@
 
 A minimal python-flask web application to demonstrate SQL injection.
 
-_Note: This demo is written in two parts and show a very simple SQL injection as well as a more advance one._ 
+_Note: This demo is written in two parts and shows a very simple SQL injection as well as a more advance one._ 
 
 # Quick start
 
@@ -36,13 +36,13 @@ You should now be able to access the application at  http://127.0.0.1:5000/login
 
 The service is using a small SQlite datatabase with a web python-flask web server on top to serve pages to the user. 
 
-The database model is described in the `models.py` file where we create two tables: one for `users` and one for their corresponding bank `records` (or transactions). 
+The database model is described in the [`models.py`](./src/app/models.py) file where we create two tables: one for `users` and one for their corresponding bank `records` (or transactions). 
 
 Each contain a number of columns that we will use to store information for our app.
 
-The pages themselves are served from the `views.py` file where we created a `login`, and `logout` and an `index` page (that you can only see when logged in). 
+The pages themselves are served from the [`views.py`](./src/app/views.py) file where we created a `login`, and `logout` and an `index` page (that you can only see when logged in). 
 
-The HTML is contained into the `templates` folder and uses JINJA2 as a text processor. This allows macros as well as avoid repetition in the HTML code. `static` contains resources like CSS (to make our page look pretty) as well as other resources like images.
+The HTML is contained into the [`templates`](./src/app/templates) folder and uses JINJA2 as a text processor. This allows macros as well as avoid repetition in the HTML code. [`static`](./src/app/static) contains resources like CSS (to make our page look pretty) as well as other resources like images.
 
 We invite you to read the code itself as there is a lot of comments helping you understand what is happening.
 
@@ -56,7 +56,7 @@ In part 1, we show how to bypass the login and in part 2, we show how to extract
 
 Use the login `alice` and `1234` as a password to login into the application.
 
-Please refer to the `views.py` file to start the demo.
+Please refer to the [`views.py`](./src/app/views.py) file to start the demo.
 
 
 
