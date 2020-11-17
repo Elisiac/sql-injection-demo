@@ -1,0 +1,17 @@
+{# login #}
+{% extends "_base.html" %}
+{% import "_macros.html" as macros %}
+{% block body %}
+    <div class="text-center">
+        <h4>Login</h4>
+        <form action="{{ url_for('login') }}" method="POST">
+          {{ form.csrf_token }}
+          {{ macros.render_field(form.username) }}
+          {{ macros.render_field(form.password) }}
+          {{ macros.render_field(form.remember_me) }}
+          <br>
+          <input type="submit" value="Log in" class="btn btn-info"/>
+          {{ form.next() }}
+        </form>
+    </div>
+{% endblock %}

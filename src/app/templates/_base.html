@@ -1,0 +1,40 @@
+{# base layout #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Bank</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-theme q.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="text-center"><img src="static/img/logo.png" alt="bank logo" width="200"></div>
+
+<header class="text-center">
+    <div class="message-header center">
+        {% if g.user.is_authenticated %}
+            <a href="{{ url_for('logout') }}" class="btn btn-info">Logout</a>
+            <hr>
+        {% endif %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="no-bullets">
+                    {% for category, message in messages %}
+                        <li class="{{ category }} bold">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <!--<hr>
+    <button onclick="return renderTheme(true);">Click to toggle background theme.</button>
+    <hr>-->
+</header>
+{% block body %}{% endblock %}
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+
+</body>
+</html>
